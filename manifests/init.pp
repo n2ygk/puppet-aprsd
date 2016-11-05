@@ -83,6 +83,7 @@
 class aprsd (
   $callsign                = $aprsd::params::callsign,
   $location                = $aprsd::params::location,
+  $email                   = $aprsd::params::email,
   $intf                    = $aprsd::params::intf,
   $netbeacon_time          = $aprsd::params::netbeacon_time,
   $lat	                   = $aprsd::params::lat,
@@ -109,7 +110,7 @@ class aprsd (
   validate_string($callsign)
   validate_string($location)
   validate_string($intf)
-  validate_string($netbeacon_time)
+  validate_integer($netbeacon_time)
   validate_string($dst)
   validate_string($lat)
   validate_string($lon)

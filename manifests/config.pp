@@ -1,6 +1,8 @@
 class aprsd::config inherits aprsd {
-  file { '/etc/ax25':
-    ensure  => directory,
+  if !File['/etc/ax25'] {
+    file { '/etc/ax25':
+      ensure  => directory,
+    }
   }
   $beacon_text = "!${lat}/${lon}#PHG${phg}/${txt}"
   file { '/etc/aprsd/aprsd.conf':
